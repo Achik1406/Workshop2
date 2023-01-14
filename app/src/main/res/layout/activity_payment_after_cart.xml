@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentAfterCart">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textHello"
+            android:layout_width="369dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="21dp"
+            android:background="@drawable/merch"
+            android:textColor="@color/neon_pink"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#f5d9de"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtviewcart"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:text="View Product"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtexpandmore"
+                android:layout_width="43dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/expand_more_24" />
+
+            <TextView
+                android:id="@+id/txtexpandless"
+                android:layout_width="43dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/expand_less_24"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/swip"
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/PaycartRecView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/TotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="Total Price is RM :"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="39dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/Debit"
+                android:layout_width="96dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:text="Debit"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="59dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:background="@drawable/debit" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="23dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/onlineBank"
+                android:layout_width="96dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:text="Online Banking"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="59dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:background="@drawable/obankk" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="134dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/Visa"
+                android:layout_width="92dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:text="Visa"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="59dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:background="@drawable/visa" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="92dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Pay"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/B3EAFB"
+            android:textColor="@color/black"
+            android:text="Pay" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

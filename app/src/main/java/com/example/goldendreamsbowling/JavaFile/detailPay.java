@@ -1,4 +1,4 @@
-package com.example.goldendreamsbowling;
+package com.example.goldendreamsbowling.JavaFile;
 
 public class detailPay {
     String date,numPlayer,numGame,shoes,time,Price;

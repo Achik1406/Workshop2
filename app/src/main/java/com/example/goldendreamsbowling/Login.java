@@ -1,16 +1,13 @@
 package com.example.goldendreamsbowling;
 
-import static android.app.PendingIntent.getActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.goldendreamsbowling.LoggedInUser.ForgotPassword;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -29,7 +27,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,7 +45,7 @@ public class Login extends AppCompatActivity {
     FirebaseAuth auth,mAuth;
     FirebaseDatabase database;
 
-    String Name,email,phone;
+    String Name,email;
     String userLogin;
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://workshop2-d8198-default-rtdb.firebaseio.com/");
@@ -67,6 +64,7 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
         auth = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        TextView forgotPass = findViewById(R.id.forgotpass);
 
 
         database = FirebaseDatabase.getInstance("https://workshop2-d8198-default-rtdb.firebaseio.com/");
@@ -94,6 +92,16 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         });
+
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,8 +172,10 @@ public class Login extends AppCompatActivity {
 
                                         databaseReference.child("users").child(userLogin).child("email").setValue(email);
                                         databaseReference.child("users").child(userLogin).child("fullname").setValue(Name);
+                                        databaseReference.child("users").child(userLogin).child("phone").setValue("");
+                                        databaseReference.child("users").child(userLogin).child("password").setValue("");
                                         Toast.makeText(Login.this, "Registration successful", Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(getApplicationContext(),Login.class);
+                                        Intent intent = new Intent(getApplicationContext(),HomePage.class);
                                         startActivity(intent);
                                         finish();
 

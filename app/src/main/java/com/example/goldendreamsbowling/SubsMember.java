@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import com.example.goldendreamsbowling.Booking.CheckOutBook;
 import com.example.goldendreamsbowling.LoggedInUser.Drawer_base;
-import com.example.goldendreamsbowling.LoggedInUser.promoFragment;
 import com.example.goldendreamsbowling.databinding.ActivitySubsMemberBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -100,6 +102,14 @@ public class SubsMember extends Drawer_base {
                             SharedPreferences.Editor editor =sharedPreferences.edit();
                             editor.putBoolean("hasSubbed",true);
                             editor.commit();
+
+                            NotificationCompat.Builder builder = new NotificationCompat.Builder(SubsMember.this,"GoldenDream");
+                            builder.setSmallIcon(R.drawable.logo);
+                            builder.setContentTitle("Golden Dream Membership");
+                            builder.setContentText("You are now members, Thanks for choosing us");
+                            builder.setAutoCancel(true);
+                            NotificationManagerCompat notificationManagerCompat =NotificationManagerCompat.from(SubsMember.this);
+                            notificationManagerCompat.notify(1,builder.build());
 
                             Intent intent = new Intent(getApplicationContext(), HomePage.class);
                             startActivity(intent);

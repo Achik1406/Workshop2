@@ -33,6 +33,8 @@ public class membersFragment extends Drawer_base {
         activityMembersFragmentBinding = activityMembersFragmentBinding.inflate(getLayoutInflater());
         setContentView(activityMembersFragmentBinding.getRoot());
 
+        //fetch data from firebase and pass to the textview
+
         ID = FirebaseAuth.getInstance();
         UID = ID.getCurrentUser().getUid();
         databaseReference.child("membership").child(UID).addListenerForSingleValueEvent(new ValueEventListener() {

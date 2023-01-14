@@ -40,12 +40,16 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:title="Setting"
+                    android:title="Profile"
                     android:id="@+id/nav_setting"
                     />
                 <item
                     android:title="About Us"
                     android:id="@+id/nav_aboutus"
+                    />
+                <item
+                    android:title="Log Out"
+                    android:id="@+id/nav_logout"
                     />
             </group>
         </menu>

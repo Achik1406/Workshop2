@@ -82,33 +82,35 @@
 
     <string-array name="Time1">
         <item>"Please Select A Time"</item>
-        <item>10.00-11.30</item>
-        <item>11.30-13.00</item>
-        <item>13.00-14.30</item>
-        <item>14.30-16.00</item>
-        <item>16.00-17.30</item>
-        <item>17.30-19.00</item>
-        <item>19.00-20.30</item>
-        <item>20.30-22.00</item>
+        <item>1000-1130</item>
+        <item>1130-1300</item>
+        <item>1300-1430</item>
+        <item>1430-1600</item>
+        <item>1600-1730</item>
+        <item>1730-1900</item>
+        <item>1900-2030</item>
+        <item>2030-2200</item>
     </string-array>
 
     <string-array name="Time2">
         <item>"Please Select A Time"</item>
-        <item>10.00-12.00</item>
-        <item>12.00-14.00</item>
-        <item>14.00-16.00</item>
-        <item>16.00-18.00</item>
-        <item>18.00-20.00</item>
+        <item>1000-1200</item>
+        <item>1200-1400</item>
+        <item>1400-1600</item>
+        <item>1600-1800</item>
+        <item>1800-2000</item>
     </string-array>
 
     <string-array name="Time3">
         <item>"Please Select A Time"</item>
-        <item>10.00-12.30</item>
-        <item>12.30-14.00</item>
-        <item>14.00-16.30</item>
-        <item>16.30-19.00</item>
-        <item>19.00-21.30</item>
+        <item>1000-1230</item>
+        <item>1230-1400</item>
+        <item>1400-1630</item>
+        <item>1630-1900</item>
+        <item>1900-2130</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

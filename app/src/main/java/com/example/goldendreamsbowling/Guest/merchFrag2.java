@@ -7,6 +7,7 @@ import android.view.View;
 import com.example.goldendreamsbowling.Cap_page;
 import com.example.goldendreamsbowling.LoggedInUser.Drawer_base;
 import com.example.goldendreamsbowling.LoggedInUser.merchFragment;
+import com.example.goldendreamsbowling.Login;
 import com.example.goldendreamsbowling.Mug_page;
 import com.example.goldendreamsbowling.Totebag_page;
 import com.example.goldendreamsbowling.Tshirt_page;
@@ -26,28 +27,28 @@ public class merchFrag2 extends DrawerGuest {
         activityMerchFragmentBinding.layoutTshirt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(merchFrag2.this, Tshirt_page.class));
+                startActivity(new Intent(merchFrag2.this, Login.class));
                 finish();
             }
         });
         activityMerchFragmentBinding.layoutMug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(merchFrag2.this, Mug_page.class));
+                startActivity(new Intent(merchFrag2.this, Login.class));
                 finish();
             }
         });
         activityMerchFragmentBinding.layoutCap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(merchFrag2.this, Cap_page.class));
+                startActivity(new Intent(merchFrag2.this, Login.class));
                 finish();
             }
         });
         activityMerchFragmentBinding.layoutTotebag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(merchFrag2.this, Totebag_page.class));
+                startActivity(new Intent(merchFrag2.this, Login.class));
                 finish();
             }
         });

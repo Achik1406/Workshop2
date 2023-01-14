@@ -4,20 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/S37"
+    android:background="#929CFF"
     tools:context=".Booking.StartBook">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/payment_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="67dp"
-        android:background="@drawable/booking12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/kuning" />
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,19 +22,30 @@
         tools:layout_editor_absoluteY="97dp">
 
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/payment_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="@drawable/booking12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/kuning" />
+
         <EditText
             android:id="@+id/Date"
             android:layout_width="209dp"
             android:layout_height="42dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/button123"
             android:backgroundTint="@color/B3EAFB"
             android:ems="10"
             android:inputType="date"
-            android:text="Enter Date Here"
+            android:hint="Enter Date Here"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,29 +80,46 @@
 
             <TextView
                 android:id="@+id/textView21"
-                android:layout_width="match_parent"
+                android:layout_width="102dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/player" />
 
             <TextView
                 android:id="@+id/textView7"
-                android:layout_width="179dp"
+                android:layout_width="131dp"
                 android:layout_height="match_parent"
-                android:text="Adults :"
+                android:text="Player :"
                 android:textAlignment="center"
                 android:textColor="@color/E9FDF2"
                 android:textSize="23dp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spnNumPlayer"
-                android:layout_width="92dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/spinnn"
-                android:dropDownSelector="@color/E9FDF2"
-                android:entries="@array/numOfPeople_arrays"
-                android:popupBackground="@color/B3EAFB" />
+            <Button
+                android:id="@+id/btnDecPlayer"
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                android:onClick="Decrement"
+                android:textStyle="bold"
+                android:backgroundTint="#eb8d96"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/valueplayer"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/btnIncPlayer"
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                android:onClick="Increment"
+                android:textStyle="bold"
+                android:backgroundTint="#eb8d96"
+                android:text="+" />
 
 
         </RadioGroup>
@@ -114,30 +134,46 @@
 
             <TextView
                 android:id="@+id/textView23"
-                android:layout_width="match_parent"
+                android:layout_width="107dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/boling"/>
+                android:background="@drawable/boling" />
 
             <TextView
                 android:id="@+id/textView10"
-                android:layout_width="186dp"
+                android:layout_width="131dp"
                 android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:textSize="23dp"
                 android:text="Games Per Person :"
+                android:textAlignment="center"
                 android:textColor="@color/E9FDF2"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spnNumGame"
-                android:layout_width="92dp"
-                android:background="@drawable/spinnn"
-                android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btnDecGame"
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                android:onClick="Decrement"
+                android:textStyle="bold"
+                android:backgroundTint="#eb8d96"
+                android:text="-" />
 
-                android:dropDownSelector="@color/E9FDF2"
-                android:entries="@array/numGame"
-                android:popupBackground="@color/B3EAFB" />
+            <TextView
+                android:id="@+id/valuegame"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/btnIncGame"
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                android:onClick="Increment"
+                android:textStyle="bold"
+                android:backgroundTint="#eb8d96"
+                android:text="+" />
 
         </RadioGroup>
 
@@ -157,23 +193,40 @@
 
             <TextView
                 android:id="@+id/pilihkasut"
-                android:layout_width="186dp"
+                android:layout_width="127dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textSize="23dp"
                 android:text="Number of Shoes :"
+                android:textAlignment="center"
                 android:textColor="@color/E9FDF2"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spnShoes"
-                android:layout_width="92dp"
-                android:layout_height="match_parent"
-                android:dropDownSelector="@color/E9FDF2"
-                android:entries="@array/ShoesSize"
-                android:background="@drawable/spinnn"
-                android:popupBackground="@color/B3EAFB" />
+            <Button
+                android:id="@+id/btnDecShoes"
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                android:onClick="Decrement"
+                android:textStyle="bold"
+                android:backgroundTint="#eb8d96"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/valueShoes"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/btnIncShoes"
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                android:onClick="Increment"
+                android:textStyle="bold"
+                android:backgroundTint="#eb8d96"
+                android:text="+" />
 
         </RadioGroup>
 
@@ -188,137 +241,425 @@
             android:textStyle="bold"
             android:text="Click here to proceed Selection" />
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time :"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            tools:layout_editor_absoluteX="58dp"
-            tools:layout_editor_absoluteY="2dp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_gravity="center">
-
-            <Spinner
-                android:id="@+id/spnTime"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:entries="@array/Time1"
-                android:visibility="invisible"
-                android:backgroundTint="@color/C9F8DE"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Spinner
-                android:id="@+id/spnTime2"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:entries="@array/Time2"
-                android:visibility="invisible"
-                android:backgroundTint="@color/C9F8DE"
-                app:layout_constraintBottom_toBottomOf="@+id/spnTime"
-                app:layout_constraintEnd_toEndOf="@+id/spnTime"
-                app:layout_constraintStart_toStartOf="@+id/spnTime"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Spinner
-                android:id="@+id/spnTime3"
-                android:layout_width="330dp"
-                android:layout_height="23dp"
-                android:backgroundTint="@color/C9F8DE"
-                android:entries="@array/Time3"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/spnTime"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <RadioGroup
-            android:layout_width="312dp"
-            android:layout_height="54dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="25dp"
-            android:orientation="horizontal">
-
-
+            android:orientation="vertical"
+            android:background="#818DFF">
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/textView12"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@color/C9F8DE"
-                android:backgroundTint="@color/B3EAFB"
-                android:text="Price : RM"
-                android:textColor="@color/black"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/Price"
-                android:layout_width="173dp"
-                android:layout_height="match_parent"
-                android:background="@color/B3EAFB"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="35dp"
-                android:textStyle="bold" />
-
-        </RadioGroup>
-
-        <RadioGroup
-            android:layout_width="411dp"
-            android:layout_height="97dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="39dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/checkout"
-                android:layout_width="158dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/C9F8DE"
-                android:text="checkOut"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:text="Time :"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="58dp"
+                tools:layout_editor_absoluteY="2dp" />
 
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="13dp"
-                android:layout_height="wrap_content" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="147dp"
+                <Spinner
+                    android:id="@+id/spnTime"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/Time1"
+                    android:visibility="invisible"
+                    android:backgroundTint="@color/C9F8DE"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/spnTime2"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/Time2"
+                    android:visibility="invisible"
+                    android:backgroundTint="@color/C9F8DE"
+                    app:layout_constraintBottom_toBottomOf="@+id/spnTime"
+                    app:layout_constraintEnd_toEndOf="@+id/spnTime"
+                    app:layout_constraintStart_toStartOf="@+id/spnTime"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/spnTime3"
+                    android:layout_width="330dp"
+                    android:layout_height="23dp"
+                    android:backgroundTint="@color/C9F8DE"
+                    android:entries="@array/Time3"
+                    android:visibility="invisible"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/spnTime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="308dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtChange"
+                    android:layout_width="282dp"
+                    android:layout_height="match_parent"
+                    android:drawableBottom="@color/B3EAFB"
+                    android:text="CLICK HERE TO SELECT LANE"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtexpandmore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/expand_more_24" />
+
+                <TextView
+                    android:id="@+id/txtexpandless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/expand_less_24"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="355dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:background="@drawable/logooosss"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.027" />
-        </RadioGroup>
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="20dp">
+
+                            <CheckBox
+                                android:id="@+id/green_1"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_1"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_1"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_1" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="8dp">
+
+                            <CheckBox
+                                android:id="@+id/green_2"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_2"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_2"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_2" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="8dp">
+
+                            <CheckBox
+                                android:id="@+id/green_3"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_3"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_3"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_3" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="8dp">
+
+                            <CheckBox
+                                android:id="@+id/green_4"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_4"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_4"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_4" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="20dp">
+
+                            <CheckBox
+                                android:id="@+id/green_5"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_5"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_5"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_5" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="8dp">
+
+                            <CheckBox
+                                android:id="@+id/green_6"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_6"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_6"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_6" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="8dp">
+
+                            <CheckBox
+                                android:id="@+id/green_7"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_7"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_7"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_7" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="8dp">
+
+                            <CheckBox
+                                android:id="@+id/green_8"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:background="@drawable/green_8"
+                                android:button="@drawable/ic_baseline_check_box_outline_blank_24"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/red_8"
+                                android:layout_width="70dp"
+                                android:layout_height="61dp"
+                                android:visibility="gone"
+                                android:background="@drawable/red_8" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="Coupon :" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/couponValue"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/couponCode"
+                    android:layout_width="151dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <RadioGroup
+                android:layout_width="312dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/C9F8DE"
+                    android:backgroundTint="@color/B3EAFB"
+                    android:text="Price : RM"
+                    android:textColor="@color/black"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Price"
+                    android:layout_width="173dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/B3EAFB"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="35dp"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="411dp"
+                android:layout_height="97dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="39dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/checkout"
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/C9F8DE"
+                    android:text="checkOut"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="13dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="147dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@drawable/logooosss"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.027" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+
 
 
     </LinearLayout>
+</ScrollView>
+
 
 </RelativeLayout>

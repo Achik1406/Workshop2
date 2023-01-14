@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/v7"
+    android:background="#9ac1fc"
     tools:context=".HomePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout

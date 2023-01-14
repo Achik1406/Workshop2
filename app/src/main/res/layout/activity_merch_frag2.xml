@@ -4,116 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Guest.merchFrag2">
+    android:background="@drawable/v7"
+    tools:context=".LoggedInUser.merchFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutHeader"
-        android:layout_width="413dp"
-        android:layout_height="151dp"
-        android:background="@drawable/header_background"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <TextView
+        android:id="@+id/textHello"
+        android:layout_width="369dp"
+        android:layout_height="56dp"
+        android:background="@drawable/merch"
+        android:textColor="@color/neon_pink"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textHello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="@string/hello"
-            android:textColor="@color/neon_pink"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15" />
-
-        <TextView
-            android:id="@+id/textUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/alice"
-            android:textColor="@color/neon_pink"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/textHello"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15" />
-
-        <ImageView
-            android:id="@+id/imageMenu"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.872"
-            app:layout_constraintStart_toEndOf="@+id/textUsername"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.146"
-            app:tint="@color/neon_pink" />
-
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="346dp"
-            android:layout_height="57dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.84">
-
-            <EditText
-                android:layout_width="316dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:hint="@string/search_elements"
-                android:imeOptions="actionSearch"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:textColor="@color/colorAccent"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/search_icon_background"
-                android:contentDescription="@string/app_name"
-                android:padding="6dp"
-                android:src="@drawable/ic_search"
-                app:tint="@color/black" />
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ScrollView
-        android:layout_width="405dp"
-        android:layout_height="533dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="402dp"
+        android:layout_height="655dp"
+        android:layout_marginBottom="4dp"
         android:overScrollMode="never"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/LayoutHeader"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="NotSibling">
 
@@ -123,11 +41,12 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="237dp">
 
+
             <LinearLayout
                 android:id="@+id/layoutTshirt"
                 android:layout_width="167dp"
                 android:layout_height="170dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="104dp"
                 android:background="#CDCCC8"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -156,12 +75,11 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:id="@+id/layoutMug"
                 android:layout_width="167dp"
                 android:layout_height="170dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="104dp"
                 android:background="#CDCCC8"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -255,63 +173,6 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="358dp"
-                android:layout_height="67dp"
-                android:layout_marginTop="64dp"
-                android:background="@drawable/trending_background"
-                android:padding="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.659"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutCap"
-                app:layout_constraintVertical_bias="0.0">
-
-                <TextView
-                    android:id="@+id/textTrending"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:background="@color/white"
-                    android:paddingStart="8dp"
-                    android:paddingTop="2dp"
-                    android:paddingEnd="8dp"
-                    android:paddingBottom="2dp"
-                    android:text="@string/trending"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/ic_favorite_border"
-                    app:layout_constraintBottom_toBottomOf="@id/textTrending"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textTrending"
-                    app:tint="@color/white" />
-
-                <TextView
-                    android:layout_width="161dp"
-                    android:layout_height="25dp"
-                    android:ellipsize="end"
-                    android:maxLines="3"
-                    android:text="End-to-end encryption"
-                    android:textColor="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.344"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="7dp" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
