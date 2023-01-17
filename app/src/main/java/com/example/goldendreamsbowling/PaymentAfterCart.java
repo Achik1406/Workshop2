@@ -49,7 +49,7 @@ public class PaymentAfterCart extends AppCompatActivity {
     RecyclerView recyclerView;
     List<PayCartModel> paycartModels;
     PaymentCartAdapter paymentCartAdapter;
-    Button Pay;
+    Button pay;
     FirebaseAuth ID;
     String UID;
     CheckBox c1,c2,c3;
@@ -77,7 +77,7 @@ public class PaymentAfterCart extends AppCompatActivity {
         scrollView = findViewById(R.id.swip);
         totalPrice = findViewById(R.id.TotalPrice);
         recyclerView.setHasFixedSize(true);
-        Button pay = findViewById(R.id.Pay);
+        pay = findViewById(R.id.Pay);
         LinearLayoutManager layoutManager = new LinearLayoutManager(PaymentAfterCart.this);
         layoutManager.setOrientation(recyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -214,7 +214,7 @@ public class PaymentAfterCart extends AppCompatActivity {
                         builder.setAutoCancel(true);
                         NotificationManagerCompat notificationManagerCompat =NotificationManagerCompat.from(PaymentAfterCart.this);
                         notificationManagerCompat.notify(1,builder.build());
-                        startActivity(new Intent(PaymentAfterCart.this, HomePage.class));
+                        startActivity(new Intent(PaymentAfterCart.this, merchFragment.class));
                         finish();
 
                     }

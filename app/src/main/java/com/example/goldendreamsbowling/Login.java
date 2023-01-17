@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.goldendreamsbowling.Guest.MainInterface;
 import com.example.goldendreamsbowling.LoggedInUser.ForgotPassword;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -203,6 +204,13 @@ public class Login extends AppCompatActivity {
 
     private Context getActivity() {
         return null;
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainInterface.class));
+        overridePendingTransition(0,0);
+        finish();
     }
 
 

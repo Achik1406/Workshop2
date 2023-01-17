@@ -385,7 +385,7 @@ public class StartBook extends AppCompatActivity {
                                             binding.green4.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    if(binding.green3.isChecked())
+                                                    if(binding.green4.isChecked())
                                                     {
                                                         binding.checkout.setVisibility(View.VISIBLE);
                                                     }
@@ -773,7 +773,7 @@ public class StartBook extends AppCompatActivity {
                                             binding.green4.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    if(binding.green3.isChecked())
+                                                    if(binding.green4.isChecked())
                                                     {
                                                         binding.checkout.setVisibility(View.VISIBLE);
                                                     }
@@ -1066,7 +1066,7 @@ public class StartBook extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.exists()){
                                         countL1 = (int) snapshot.getChildrenCount();
-                                        if(countL1==5){
+                                        if(countL1==2){
                                             binding.green2.setVisibility(View.GONE);
                                             binding.red2.setVisibility(View.VISIBLE);
                                         }
@@ -1108,7 +1108,7 @@ public class StartBook extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.exists()){
                                         countL1 = (int) snapshot.getChildrenCount();
-                                        if(countL1==5){
+                                        if(countL1==2){
                                             binding.green3.setVisibility(View.GONE);
                                             binding.red3.setVisibility(View.VISIBLE);
                                         }
@@ -1151,7 +1151,7 @@ public class StartBook extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.exists()){
                                         countL1 = (int) snapshot.getChildrenCount();
-                                        if(countL1==5){
+                                        if(countL1==2){
                                             binding.green4.setVisibility(View.GONE);
                                             binding.red4.setVisibility(View.VISIBLE);
                                         }
@@ -1161,7 +1161,7 @@ public class StartBook extends AppCompatActivity {
                                             binding.green4.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
-                                                    if(binding.green3.isChecked())
+                                                    if(binding.green4.isChecked())
                                                     {
                                                         binding.checkout.setVisibility(View.VISIBLE);
                                                     }
@@ -1193,7 +1193,7 @@ public class StartBook extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.exists()){
                                         countL1 = (int) snapshot.getChildrenCount();
-                                        if(countL1==5){
+                                        if(countL1==2){
                                             binding.green5.setVisibility(View.GONE);
                                             binding.red5.setVisibility(View.VISIBLE);
                                         }
@@ -1236,7 +1236,7 @@ public class StartBook extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.exists()){
                                         countL1 = (int) snapshot.getChildrenCount();
-                                        if(countL1==5){
+                                        if(countL1==2){
                                             binding.green6.setVisibility(View.GONE);
                                             binding.red6.setVisibility(View.VISIBLE);
                                         }
@@ -1279,7 +1279,7 @@ public class StartBook extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.exists()){
                                         countL1 = (int) snapshot.getChildrenCount();
-                                        if(countL1==5){
+                                        if(countL1==2){
                                             binding.green7.setVisibility(View.GONE);
                                             binding.red7.setVisibility(View.VISIBLE);
                                         }
@@ -1321,7 +1321,7 @@ public class StartBook extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.exists()){
                                         countL1 = (int) snapshot.getChildrenCount();
-                                        if(countL1==5){
+                                        if(countL1==2){
                                             binding.green8.setVisibility(View.GONE);
                                             binding.red8.setVisibility(View.VISIBLE);
                                         }

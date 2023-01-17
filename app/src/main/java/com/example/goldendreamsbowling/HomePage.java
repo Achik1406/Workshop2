@@ -8,6 +8,8 @@ import com.example.goldendreamsbowling.databinding.ActivityHomePageBinding;
 
 public class HomePage extends Drawer_base {
 
+
+
     ActivityHomePageBinding bind;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
