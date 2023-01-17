@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cdb9e1"
+    android:background="@drawable/p01"
+    android:padding="10dp"
     tools:context=".Booking.CheckOutBook">
 
     <androidx.appcompat.widget.Toolbar
@@ -19,55 +20,59 @@
 
     <LinearLayout
         android:id="@+id/abc"
-        android:layout_width="match_parent"
-        android:layout_height="641dp"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:background="@drawable/announce"
+        android:backgroundTint="#9667C5"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <LinearLayout
-            android:layout_width="367dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/DatePay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Date :"
-                android:textSize="17dp"
                 android:textColor="@color/black"
+                android:textSize="17dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TimePay"
-                android:textSize="17dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Time :"
                 android:textColor="@color/black"
+                android:textSize="17dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/NoPlayer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/E9FDF2"
-                android:textSize="17dp"
+                android:background="#D9B8FA"
                 android:text="Number of Player :"
                 android:textColor="@color/black"
+                android:textSize="17dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/noGame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Number of Games :"
-                android:textSize="17dp"
                 android:textColor="@color/black"
+                android:textSize="17dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +85,7 @@
                 android:id="@+id/ShoesPay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Number of shoes:"
                 android:textColor="@color/black"
                 android:textSize="17dp"
@@ -102,7 +107,7 @@
                 android:id="@+id/subtotal"
                 android:layout_width="212dp"
                 android:layout_height="wrap_content"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Subtotal : "
                 android:textColor="@color/black"
                 android:textSize="20dp"
@@ -113,7 +118,7 @@
                 android:layout_width="212dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Discount :"
                 android:textColor="@color/black"
                 android:textSize="20dp"
@@ -124,7 +129,7 @@
                 android:layout_width="212dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Tax      :"
                 android:textColor="@color/black"
                 android:textSize="20dp"
@@ -135,7 +140,7 @@
                 android:layout_width="212dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/E9FDF2"
+                android:background="#D9B8FA"
                 android:text="Total : RM "
                 android:textColor="@color/black"
                 android:textSize="20dp"
@@ -146,13 +151,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="73dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginBottom="15dp"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="39dp"
-                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/Debit"
@@ -160,7 +162,7 @@
                 android:layout_height="42dp"
                 android:layout_gravity="center"
                 android:background="@drawable/button123"
-                android:backgroundTint="@color/E9FDF2"
+                android:backgroundTint="#D9B8FA"
                 android:text="Debit"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -174,7 +176,7 @@
 
             <TextView
                 android:id="@+id/textView33"
-                android:layout_width="23dp"
+                android:layout_width="15dp"
                 android:layout_height="wrap_content" />
 
             <CheckBox
@@ -183,7 +185,7 @@
                 android:layout_height="38dp"
                 android:layout_gravity="center"
                 android:background="@drawable/button123"
-                android:backgroundTint="@color/E9FDF2"
+                android:backgroundTint="#D9B8FA"
                 android:text="Online Banking"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -195,12 +197,6 @@
                 android:layout_gravity="center"
                 android:background="@drawable/obankk" />
 
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
 
         </LinearLayout>
 
@@ -208,12 +204,8 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginBottom="20dp">
-
-            <TextView
-                android:id="@+id/textView36"
-                android:layout_width="134dp"
-                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/Visa"
@@ -221,7 +213,7 @@
                 android:layout_height="42dp"
                 android:layout_gravity="center"
                 android:background="@drawable/button123"
-                android:backgroundTint="@color/E9FDF2"
+                android:backgroundTint="#D9B8FA"
                 android:text="Visa"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -233,10 +225,6 @@
                 android:layout_gravity="center"
                 android:background="@drawable/visa" />
 
-            <TextView
-                android:id="@+id/textView38"
-                android:layout_width="92dp"
-                android:layout_height="wrap_content" />
         </LinearLayout>
 
 
@@ -249,13 +237,6 @@
             android:backgroundTint="@color/C9F8DE"
             android:text="Proceed Payment"
             android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="136dp"
-            android:layout_height="86dp"
-            android:layout_gravity="end"
-            android:background="@drawable/logooosss" />
 
 
     </LinearLayout>

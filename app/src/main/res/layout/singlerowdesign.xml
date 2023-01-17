@@ -5,23 +5,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:elevation="8dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:backgroundTint="#805BB5">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:padding="15dp"
-        android:gravity="center_horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:background="#C798F6"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/pCode"
+                android:layout_width="199dp"
+                android:layout_height="118dp"
+                android:background="@drawable/announce"
+                android:backgroundTint="#8ED5CD"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="40dp"
+                android:textColor="@color/black" />
 
 
-        <TextView
-            android:id="@+id/pCode"
-            android:layout_width="105dp"
-            android:layout_height="36dp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
+        </RelativeLayout>
 
-
-    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

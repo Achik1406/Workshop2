@@ -2,35 +2,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
         <item
-            android:title=" "
-            />
-        <item
-            android:title=" "
-            />
-        <item
             android:title="Home"
             android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
             />
         <item
             android:title="Booking"
             android:id="@+id/nav_booking"
+            android:icon="@drawable/ic_baseline_rice_bowl_24"
             />
         <item
             android:title="Member"
             android:id="@+id/nav_member"
+            android:icon="@drawable/ic_baseline_groups_24"
             />
         <item
             android:title="Announcement"
             android:id="@+id/nav_announce"
+            android:icon="@drawable/ic_baseline_announcement_24"
             />
         <item
             android:title="Merchandise"
             android:id="@+id/nav_merch"
+            android:icon="@drawable/ic_baseline_shopping_bag_24"
             />
         <item
 
             android:title="Promotion"
             android:id="@+id/nav_promo"
+            android:icon="@drawable/ic_baseline_discount_24"
             />
         <item
             android:title=" "
@@ -42,14 +42,17 @@
                 <item
                     android:title="Profile"
                     android:id="@+id/nav_setting"
+                    android:icon="@drawable/ic_baseline_person_24"
                     />
                 <item
                     android:title="About Us"
                     android:id="@+id/nav_aboutus"
+                    android:icon="@drawable/ic_baseline_contact_support_24"
                     />
                 <item
                     android:title="Log Out"
                     android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_baseline_logout_24"
                     />
             </group>
         </menu>

@@ -1,9 +1,13 @@
 package com.example.goldendreamsbowling.Guest;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.goldendreamsbowling.Guest.DrawerGuest;
+import com.example.goldendreamsbowling.HomePage;
+import com.example.goldendreamsbowling.Login;
+import com.example.goldendreamsbowling.MainActivity;
 import com.example.goldendreamsbowling.databinding.ActivityMainInterfaceBinding;
 
 public class MainInterface extends DrawerGuest {
@@ -15,7 +19,6 @@ public class MainInterface extends DrawerGuest {
         super.onCreate(savedInstanceState);
         bind =bind.inflate(getLayoutInflater());
         setContentView(bind.getRoot());
-        allocateActivityTitle("Home");
 
     }
 

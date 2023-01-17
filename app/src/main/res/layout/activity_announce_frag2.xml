@@ -6,38 +6,44 @@
     android:layout_height="match_parent"
     android:divider="@color/black"
     android:orientation="vertical"
-    android:background="@drawable/v7"
+    android:background="@drawable/p01"
     tools:context=".Guest.AnnounceFrag2">
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="300dp"
-        android:layout_height="57dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/ann" />
 
-    <ListView
-        android:id="@+id/listviewID"
-        android:background="@color/teal_700"
-        style="@style/Widget.AppCompat.ListView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true"
-        android:cacheColorHint="@color/C9F8DE"
-        android:divider="@color/kuning"
-        android:dividerHeight="15dp"
-        android:padding="5dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989" >
+        android:layout_gravity="center"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="45dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listviewID"
+            style="@style/Widget.AppCompat.ListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/announce"
+            android:backgroundTint="#805BB5"
+            android:divider="#EA9258"
+            android:dividerHeight="8dp"
+            android:padding="7dp"
+            android:paddingBottom="10dp">
+
+        </ListView>
+
+    </LinearLayout>
 
 
-    </ListView>
 
 
 </LinearLayout>

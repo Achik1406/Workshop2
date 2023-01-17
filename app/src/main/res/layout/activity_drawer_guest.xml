@@ -15,11 +15,13 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="150dp"
+        android:layout_width="190dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/S172945"
+        android:background="#805BB5"
         android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/B30"
         app:itemTextColor="#FDF07A"
         app:menu="@menu/navigation_guest">
 

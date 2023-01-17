@@ -4,50 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/v7"
+    android:background="@drawable/home"
     tools:context=".AboutUsFragment">
 
     <TextView
-        android:id="@+id/textView18"
-        android:layout_width="302dp"
-        android:layout_height="149dp"
-        android:background="@drawable/logooosss"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
-
-    <TextView
         android:id="@+id/textView4"
-        android:layout_width="376dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="          Golden Dream’s Bowling Club established in 2020 making it the first bowling club to open within the Durian Tunggal area. As the only bowling club in the area, it has a strong bowling and social membership and regularly holds state-class tournaments. We’re a membership organization that provides standardized rules, regulations and benefits to make bowling fair and fun for everyone."
-        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="Golden Dream’s Bowling Club established in 2020 making it the first bowling club to open within the Durian Tunggal area. As the only bowling club in the area, it has a strong bowling and social membership and regularly holds state-class tournaments. We’re a membership organization that provides standardized rules, regulations and benefits to make bowling fair and fun for everyone."
+        android:textColor="@color/black"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintVertical_bias="0.332" />
 
     <TextView
         android:id="@+id/textView40"
-        android:layout_width="382dp"
-        android:layout_height="106dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="          The Club recently held their 2nd Anniversary celebrations and a fun tournament were organized to mark the occasion. It is the ideal location for your upcoming event because to the welcoming and laid-back ambiance, free on-site parking, function space, beer garden, and superb food."
-        android:textColor="@color/white"
+        android:padding="20dp"
+        android:text="The Club recently held their 2nd Anniversary celebrations and a fun tournament were organized to mark the occasion. It is the ideal location for your upcoming event because to the welcoming and laid-back ambiance, free on-site parking, function space, beer garden, and superb food."
+        android:textColor="@color/black"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

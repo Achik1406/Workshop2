@@ -24,6 +24,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.bumptech.glide.Glide;
+import com.example.goldendreamsbowling.AboutUsFragment;
+import com.example.goldendreamsbowling.HomePage;
 import com.example.goldendreamsbowling.R;
 import com.example.goldendreamsbowling.databinding.ActivityAccountBinding;
 import com.google.android.gms.tasks.Continuation;
@@ -83,8 +85,11 @@ public class Account extends Drawer_base{
             databaseReference.child("profileUser").child(UID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    final String dataImg = snapshot.child("image").getValue().toString();
-                    Glide.with(getApplicationContext()).load(dataImg).into(binding.img);
+                    if(snapshot.exists())
+                    {
+                        final String dataImg = snapshot.child("image").getValue().toString();
+                        Glide.with(getApplicationContext()).load(dataImg).into(binding.img);
+                    }
                 }
 
                 @Override
@@ -315,6 +320,10 @@ public class Account extends Drawer_base{
     }
 
 
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Account.this, HomePage.class));
+        finish();
+    }
 
 }

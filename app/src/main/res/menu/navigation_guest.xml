@@ -4,18 +4,22 @@
         <item
             android:title="Home"
             android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
             />
         <item
             android:title="Announcement"
             android:id="@+id/nav_announce"
+            android:icon="@drawable/ic_baseline_announcement_24"
             />
         <item
             android:title="Merchandise"
             android:id="@+id/nav_merch"
+            android:icon="@drawable/ic_baseline_shopping_bag_24"
             />
         <item
             android:title="Login"
             android:id="@+id/nav_login"
+            android:icon="@drawable/ic_baseline_login_24"
             />
     </group>
     <item android:title=""
@@ -26,6 +30,7 @@
                 <item
                     android:title="About Us"
                     android:id="@+id/nav_aboutus"
+                    android:icon="@drawable/ic_baseline_contact_support_24"
                     />
             </group>
         </menu>

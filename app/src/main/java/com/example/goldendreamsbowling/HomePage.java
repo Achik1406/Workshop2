@@ -15,8 +15,6 @@ public class HomePage extends Drawer_base {
         bind =bind.inflate(getLayoutInflater());
         setContentView(bind.getRoot());
 
-       // allocateActivityTitle("Home");
-
     }
 
     @Override

@@ -4,76 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/v7"
+    android:background="@drawable/p01"
     tools:context=".LoggedInUser.BookingFragment">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="414dp"
+        android:layout_height="141dp"
+        android:background="@drawable/booking12"
+        app:layout_constraintBottom_toTopOf="@+id/addBook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/addBook"
         android:layout_width="245dp"
-        android:layout_height="48dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/C9F8DE"
         android:text="Book Match"
         android:textColor="@color/black"
-        android:backgroundTint="@color/C9F8DE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintVertical_bias="0.312" />
 
     <Button
         android:id="@+id/cancelUpdate"
         android:layout_width="246dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="384dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/C9F8DE"
         android:text="Cancel/Update Booking"
         android:textColor="@color/black"
-        android:backgroundTint="@color/C9F8DE"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addBook"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintTop_toBottomOf="@+id/addBook" />
 
     <Button
         android:id="@+id/viewBooking"
-        android:layout_width="244dp"
-        android:layout_height="47dp"
+        android:layout_width="246dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/C9F8DE"
         android:text="View Booking"
         android:textColor="@color/black"
-        android:backgroundTint="@color/C9F8DE"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cancelUpdate"
-        app:layout_constraintVertical_bias="0.068" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="325dp"
-        android:layout_height="75dp"
-        android:background="@drawable/booking12"
-        app:layout_constraintBottom_toTopOf="@+id/addBook"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="176dp"
-        android:layout_height="88dp"
-        android:background="@drawable/logooosss"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.995"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewBooking"
-        app:layout_constraintVertical_bias="0.993" />
-
+        app:layout_constraintTop_toBottomOf="@+id/cancelUpdate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,8 +12,6 @@ import android.content.SharedPreferences;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
-
 import com.example.goldendreamsbowling.Guest.MainInterface;
 import com.example.goldendreamsbowling.HomePage;
 import com.example.goldendreamsbowling.Login;

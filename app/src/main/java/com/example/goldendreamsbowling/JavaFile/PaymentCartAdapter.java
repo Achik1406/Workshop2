@@ -50,28 +50,11 @@ public class PaymentCartAdapter extends FirebaseRecyclerAdapter<PayCartModel , P
         ID = FirebaseAuth.getInstance();
         UID = ID.getCurrentUser().getUid();
         holder.productName.setText(model.getName());
-        holder.productPrice.setText(model.getPrice());
+        holder.productPrice.setText("RM "+model.getPrice());
         itemPrice = Double.parseDouble(model.getPrice());
         Glide.with(holder.imageView.getContext()).load(model.getImage()).into(holder.imageView);
         total = total + itemPrice;
         converter = String.valueOf(total);
-        //PayCart();
-
-    }
-
-    private void PayCart() {
-
-        FirebaseDatabase.getInstance().getReference().child("AddToCart").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                FirebaseDatabase.getInstance().getReference().child("AddTotal").child(UID).child("Total").setValue(converter);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
 

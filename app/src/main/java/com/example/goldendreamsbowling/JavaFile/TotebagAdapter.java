@@ -61,7 +61,7 @@ public class TotebagAdapter extends RecyclerView.Adapter<TotebagAdapter.MyViewHo
         UID = ID.getCurrentUser().getUid();
 
         holder.productName.setText(name);
-        holder.productPrice.setText(price);
+        holder.productPrice.setText("RM "+price);
         try {
             Picasso.get().load(image).into(holder.imageView);
         }catch (Exception e){

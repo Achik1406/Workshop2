@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoggedInUser.PromoFragement"
     android:id="@+id/wrapper"
-    android:background="#FFFFFF">
+    android:background="@drawable/p01">
 
     <FrameLayout
         android:id="@+id/fragment_container"

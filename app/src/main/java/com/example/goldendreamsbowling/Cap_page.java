@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -27,7 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cap_page extends AppCompatActivity {
+public class Cap_page extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
     RecyclerView recyclerView;
     FloatingActionButton floatingActionButton;
     List<productModel> productModels;
@@ -36,6 +38,7 @@ public class Cap_page extends AppCompatActivity {
     private int count;
     FirebaseAuth ID;
     String UID;
+    private SwipeRefreshLayout SwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,8 @@ public class Cap_page extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         getProducts();
         getcartCount();
+        SwipeRefreshLayout=(SwipeRefreshLayout)findViewById(R.id.swip);
+        SwipeRefreshLayout.setOnRefreshListener(this);
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +67,8 @@ public class Cap_page extends AppCompatActivity {
             }
         });
     }
+
+
 
     public void getcartCount() {
 
@@ -130,5 +137,15 @@ public class Cap_page extends AppCompatActivity {
             startActivity(new Intent(Cap_page.this, merchFrag2.class));
             finish();
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                SwipeRefreshLayout.setRefreshing(false);
+            }
+        }, 2000);
     }
 }

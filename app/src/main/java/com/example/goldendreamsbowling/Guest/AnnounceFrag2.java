@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 
 import com.example.goldendreamsbowling.HomePage;
 import com.example.goldendreamsbowling.JavaFile.listAnn;
+import com.example.goldendreamsbowling.MainActivity;
 import com.example.goldendreamsbowling.R;
 import com.example.goldendreamsbowling.databinding.ActivityAnnounceFrag2Binding;
 import com.example.goldendreamsbowling.list_adapter;
@@ -59,11 +60,9 @@ public class AnnounceFrag2 extends DrawerGuest {
         });
     }
 
-
-
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, HomePage.class));
+        startActivity(new Intent(this, MainActivity.class));
         overridePendingTransition(0,0);
         finish();
     }

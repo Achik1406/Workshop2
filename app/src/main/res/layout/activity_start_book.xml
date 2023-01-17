@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="0dp"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="10dp"
         tools:context=".Booking.StartBook"
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="97dp">
@@ -24,8 +24,9 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/payment_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
             android:background="@drawable/booking12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -40,12 +41,12 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/button123"
-            android:backgroundTint="@color/B3EAFB"
+            android:backgroundTint="#8F62DA"
             android:ems="10"
             android:inputType="date"
             android:hint="Enter Date Here"
             android:textAlignment="center"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/white"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="Decrement"
                 android:textStyle="bold"
-                android:backgroundTint="#eb8d96"
+                android:backgroundTint="#8F62DA"
                 android:text="-" />
 
             <TextView
@@ -109,6 +110,7 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:text="0"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAlignment="center" />
 
@@ -118,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="Increment"
                 android:textStyle="bold"
-                android:backgroundTint="#eb8d96"
+                android:backgroundTint="#8F62DA"
                 android:text="+" />
 
 
@@ -155,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="Decrement"
                 android:textStyle="bold"
-                android:backgroundTint="#eb8d96"
+                android:backgroundTint="#8F62DA"
                 android:text="-" />
 
             <TextView
@@ -163,6 +165,7 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:text="0"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAlignment="center" />
 
@@ -172,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="Increment"
                 android:textStyle="bold"
-                android:backgroundTint="#eb8d96"
+                android:backgroundTint="#8F62DA"
                 android:text="+" />
 
         </RadioGroup>
@@ -208,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="Decrement"
                 android:textStyle="bold"
-                android:backgroundTint="#eb8d96"
+                android:backgroundTint="#8F62DA"
                 android:text="-" />
 
             <TextView
@@ -216,6 +219,7 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:text="0"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAlignment="center" />
 
@@ -225,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="Increment"
                 android:textStyle="bold"
-                android:backgroundTint="#eb8d96"
+                android:backgroundTint="#8F62DA"
                 android:text="+" />
 
         </RadioGroup>
@@ -245,7 +249,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#818DFF">
+            android:id="@+id/linSelection"
+            android:padding="7dp"
+            android:visibility="gone"
+            android:background="#6D78E3">
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
@@ -265,78 +272,69 @@
 
                 <Spinner
                     android:id="@+id/spnTime"
-                    android:layout_width="330dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="327dp"
+                    android:layout_height="39dp"
+                    android:gravity="center"
+                    android:background="@drawable/button123"
+                    android:backgroundTint="#8F62DA"
                     android:entries="@array/Time1"
+                    android:textAlignment="center"
                     android:visibility="invisible"
-                    android:backgroundTint="@color/C9F8DE"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:background="@color/white"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
                     android:id="@+id/spnTime2"
                     android:layout_width="330dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="39dp"
                     android:entries="@array/Time2"
+                    android:gravity="center"
                     android:visibility="invisible"
-                    android:backgroundTint="@color/C9F8DE"
+                    android:textAlignment="center"
+                    android:background="@drawable/button123"
+                    android:backgroundTint="#8F62DA"
                     app:layout_constraintBottom_toBottomOf="@+id/spnTime"
                     app:layout_constraintEnd_toEndOf="@+id/spnTime"
                     app:layout_constraintStart_toStartOf="@+id/spnTime"
-                    android:background="@color/white"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
                     android:id="@+id/spnTime3"
                     android:layout_width="330dp"
-                    android:layout_height="23dp"
-                    android:backgroundTint="@color/C9F8DE"
+                    android:gravity="center"
+                    android:layout_height="39dp"
+                    android:background="@drawable/button123"
+                    android:backgroundTint="#8F62DA"
                     android:entries="@array/Time3"
+                    android:textAlignment="center"
                     android:visibility="invisible"
-                    android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/spnTime"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
-                android:layout_width="308dp"
-                android:layout_height="wrap_content"
+                android:layout_width="330dp"
+                android:layout_height="39dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/button123"
+                android:backgroundTint="#8F62DA"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/txtChange"
-                    android:layout_width="282dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawableBottom="@color/B3EAFB"
+                    android:gravity="center"
                     android:text="CLICK HERE TO SELECT LANE"
-                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/txtexpandmore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/expand_more_24" />
-
-                <TextView
-                    android:id="@+id/txtexpandless"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/expand_less_24"
-                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -347,6 +345,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:id="@+id/linLane"
+                    android:visibility="gone"
                     android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -582,7 +582,7 @@
 
 
             <RadioGroup
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="25dp"
@@ -590,11 +590,19 @@
 
 
                 <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/C9F8DE"
+                    android:backgroundTint="#D1C5FD"/>
+
+                <TextView
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@color/C9F8DE"
-                    android:backgroundTint="@color/B3EAFB"
+                    android:backgroundTint="#D1C5FD"
                     android:text="Price : RM"
                     android:textColor="@color/black"
                     android:textSize="30dp"
@@ -602,64 +610,63 @@
 
                 <TextView
                     android:id="@+id/Price"
-                    android:layout_width="173dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="@color/B3EAFB"
+                    android:background="@color/C9F8DE"
+                    android:backgroundTint="#D1C5FD"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="35dp"
+                    android:textSize="30dp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/C9F8DE"
+                    android:backgroundTint="#D1C5FD"
+                    android:layout_weight="1" />
 
             </RadioGroup>
 
             <RadioGroup
-                android:layout_width="411dp"
-                android:layout_height="97dp"
-                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
-
-                <TextView
-                    android:id="@+id/textView29"
-                    android:layout_width="39dp"
-                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/checkout"
                     android:layout_width="158dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/C9F8DE"
+                    android:gravity="center"
+                    android:visibility="gone"
                     android:text="checkOut"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="13dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/textView27"
-                    android:layout_width="147dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:background="@drawable/logooosss"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.495"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.027" />
             </RadioGroup>
 
         </LinearLayout>
 
-
-
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="147dp"
+            android:layout_height="137dp"
+            android:layout_gravity="end"
+            android:background="@drawable/logooosss"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.027" />
 
 
     </LinearLayout>
 </ScrollView>
-
 
 </RelativeLayout>

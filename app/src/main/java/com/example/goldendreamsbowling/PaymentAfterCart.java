@@ -36,8 +36,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class PaymentAfterCart extends AppCompatActivity {
@@ -141,6 +145,18 @@ public class PaymentAfterCart extends AppCompatActivity {
                 progressDialog.setMessage("Please wait,while we processing the payment");
                 progressDialog.show();
                 Handler handler = new Handler();
+                SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
+                Date todayDate = new Date();
+                String thisDate = currentDate.format(todayDate);
+                String currentString = thisDate;
+                String[] separated = currentString.split("-");
+                String day = separated[0];
+                String month = separated[1];
+                String year = separated[2];
+                int a = Integer.parseInt(day);
+                int b = Integer.parseInt(month);
+                int c = Integer.parseInt(year);
+                String date = a+"-"+(b)+"-"+c;
 
                 databaseReference.child("AddToCart").child(UID).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -158,7 +174,6 @@ public class PaymentAfterCart extends AppCompatActivity {
                         });
 
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
@@ -170,11 +185,21 @@ public class PaymentAfterCart extends AppCompatActivity {
                         databaseReference.child("MerchPayment").child(UID).child("Payment").child("TotalPrice").setValue(totalP);
                         databaseReference.child("MerchPayment").child(UID).child("Payment").child("PaymentID").setValue(pID);
                         databaseReference.child("MerchPayment").child(UID).child("Payment").child("PaymentMethod").setValue(payMethod);
+                        databaseReference.child("MerchPayment").child(UID).child("Payment").child("Date").setValue(date);
+                        databaseReference.child("AddTotal").child(UID).child("Total").removeValue();
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
+                databaseReference.child("AddToCart").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        snapshot.child(UID).getRef().removeValue();
 
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
                     }
                 });
                 handler.postDelayed(new Runnable() {
@@ -235,7 +260,7 @@ public class PaymentAfterCart extends AppCompatActivity {
                 if(snapshot.exists())
                 {
                     final String dataAdd=snapshot.child("Total").getValue().toString();
-                    totalPrice.setText("Total Price is :"+dataAdd);
+                    totalPrice.setText("Total Price is : RM "+dataAdd);
                     totalP = dataAdd;
                 }
                 else
@@ -274,7 +299,7 @@ public class PaymentAfterCart extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(PaymentAfterCart.this, merchFragment.class));
+        startActivity(new Intent(PaymentAfterCart.this, CartActivity.class));
         finish();
     }
 }

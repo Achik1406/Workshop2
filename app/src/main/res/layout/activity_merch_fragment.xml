@@ -4,50 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/v7"
+    android:background="@drawable/p01"
     tools:context=".LoggedInUser.merchFragment">
 
 
     <TextView
         android:id="@+id/textHello"
-        android:layout_width="369dp"
-        android:layout_height="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/merch"
         android:textColor="@color/neon_pink"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="402dp"
-        android:layout_height="655dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="212dp"
         android:overScrollMode="never"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="NotSibling">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="237dp">
+            android:layout_height="wrap_content">
 
 
             <LinearLayout
                 android:id="@+id/layoutTshirt"
                 android:layout_width="167dp"
                 android:layout_height="170dp"
-                android:layout_marginTop="104dp"
-                android:background="#CDCCC8"
+                android:background="@drawable/announce"
+                android:backgroundTint="#B894C8"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="15dp"
@@ -79,8 +78,8 @@
                 android:id="@+id/layoutMug"
                 android:layout_width="167dp"
                 android:layout_height="170dp"
-                android:layout_marginTop="104dp"
-                android:background="#CDCCC8"
+                android:background="@drawable/announce"
+                android:backgroundTint="#B894C8"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="15dp"
@@ -113,7 +112,8 @@
                 android:layout_width="167dp"
                 android:layout_height="170dp"
                 android:layout_marginTop="16dp"
-                android:background="#CDCCC8"
+                android:background="@drawable/announce"
+                android:backgroundTint="#B894C8"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="15dp"
@@ -146,7 +146,8 @@
                 android:layout_width="167dp"
                 android:layout_height="170dp"
                 android:layout_marginTop="16dp"
-                android:background="#CDCCC8"
+                android:background="@drawable/announce"
+                android:backgroundTint="#B894C8"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="15dp"

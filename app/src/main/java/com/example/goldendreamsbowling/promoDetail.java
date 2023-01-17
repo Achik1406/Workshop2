@@ -87,21 +87,48 @@ public class promoDetail extends Fragment {
         TextView promovalue = view.findViewById(R.id.PromoValue);
         Button button = view.findViewById(R.id.Claimpromo);
 
-        promocode.setText(PromoCode);
-        promovalue.setText(PromoValue);
+        promocode.setText("Promo Code : "+PromoCode);
+        promovalue.setText("Promo Code : "+PromoValue);
         ID = FirebaseAuth.getInstance();
         UID = ID.getCurrentUser().getUid();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                database.child("ClaimedPromo").addListenerForSingleValueEvent(new ValueEventListener() {
+                database.child("ClaimedPromo").child(UID).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        database.child("ClaimedPromo").child(UID).child("PromoCode").setValue(PromoCode);
-                        database.child("ClaimedPromo").child(UID).child("PromoValue").setValue(PromoValue);
 
-                        Toast.makeText(getContext(), "successful", Toast.LENGTH_LONG).show();
+                        if(snapshot.exists())
+                        {
+                            Toast.makeText(getContext(), "Cannot claim multiple coupon", Toast.LENGTH_LONG).show();
+                        }
+                        else
+                        {
+                            database.child("ClaimedPromo").child(UID).child("PromoCode").setValue(PromoCode);
+                            database.child("ClaimedPromo").child(UID).child("PromoValue").setValue(PromoValue);
+                            database.child("Promotion").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                                        String datacode = dataSnapshot.child("PromoCode").getValue(String.class);
+                                        String datavalue = dataSnapshot.child("PromoValue").getValue(String.class);
+                                        if (PromoCode.equals(datacode)&&PromoValue.equals(datavalue)) {
+                                            dataSnapshot.child("PromoValue").getRef().removeValue();
+                                            dataSnapshot.child("Email").getRef().removeValue();
+                                            dataSnapshot.child("PromoCode").getRef().removeValue();
+                                        }
+                                    }
+                                    Toast.makeText(getContext(), "successful", Toast.LENGTH_LONG).show();
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                        }
+
                         Intent intent = new Intent(getContext(), HomePage.class);
                         startActivity(intent);
                     }

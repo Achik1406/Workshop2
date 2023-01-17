@@ -17,6 +17,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.example.goldendreamsbowling.HomePage;
 import com.example.goldendreamsbowling.LoggedInUser.Account;
+import com.example.goldendreamsbowling.LoggedInUser.BookingFragment;
 import com.example.goldendreamsbowling.R;
 import com.example.goldendreamsbowling.databinding.ActivityCheckOutBookBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -113,51 +114,6 @@ public class CheckOutBook extends AppCompatActivity {
                         final String dataName=snapshot.child("fullname").getValue().toString();
                         final String dataEmail=snapshot.child("email").getValue().toString();
 
-                        databaseReference.child("Booking").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                                databaseReference.child("Booking").child(UID).child("Date").setValue(date);
-                                databaseReference.child("Booking").child(UID).child("Time").setValue(time);
-                                databaseReference.child("Booking").child(UID).child("FullName").setValue(dataName);
-                                databaseReference.child("Booking").child(UID).child("Email").setValue(dataEmail);
-                                databaseReference.child("Booking").child(UID).child("Lane").setValue(Lane);
-                                databaseReference.child("Booking").child(UID).child("NumberPlayer").setValue(noPlayer);
-                                databaseReference.child("Booking").child(UID).child("NumberGame").setValue(noGames);
-                                databaseReference.child("Booking").child(UID).child("NumberShoes").setValue(pickShoes);
-                                databaseReference.child("Booking").child(UID).child("TotalPrice").setValue(totalPrice);
-                                databaseReference.child("Booking").child(UID).child("PaymentID").setValue(pp);
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-
-                        databaseReference.child("Payment").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                databaseReference.child("Payment").child(UID).child("Date").setValue(date);
-                                databaseReference.child("Payment").child(UID).child("Time").setValue(time);
-                                databaseReference.child("Payment").child(UID).child("PaymentID").setValue(pp);
-                                databaseReference.child("Payment").child(UID).child("Email").setValue(dataEmail);
-                                databaseReference.child("Payment").child(UID).child("NumberPlayer").setValue(noPlayer);
-                                databaseReference.child("Payment").child(UID).child("NumberGame").setValue(noGames);
-                                databaseReference.child("Payment").child(UID).child("NumberShoes").setValue(pickShoes);
-                                databaseReference.child("Payment").child(UID).child("TotalPrice").setValue(totalPrice);
-                                databaseReference.child("Payment").child(UID).child("PaymentMethod").setValue(payMethod);
-
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-
                         databaseReference.child("CheckLane").child(date).child(time).child(Lane).addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -191,30 +147,52 @@ public class CheckOutBook extends AppCompatActivity {
                                      c = datacounter+1;
                                      String d = String.valueOf(c);
                                     databaseReference.child("CounterBook").child(UID).child(d).child("k1").setValue("");
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("Date").setValue(date);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("Time").setValue(time);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("FullName").setValue(dataName);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("Email").setValue(dataEmail);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("Lane").setValue(Lane);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("NumberPlayer").setValue(noPlayer);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("NumberGame").setValue(noGames);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("NumberShoes").setValue(pickShoes);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("TotalPrice").setValue(totalPrice);
-                                    databaseReference.child("Bookingf").child(UID).child(d).child("PaymentID").setValue(pp);
+
+                                    databaseReference.child("Booking").child(UID).child(d).child("Date").setValue(date);
+                                    databaseReference.child("Booking").child(UID).child(d).child("Time").setValue(time);
+                                    databaseReference.child("Booking").child(UID).child(d).child("FullName").setValue(dataName);
+                                    databaseReference.child("Booking").child(UID).child(d).child("Email").setValue(dataEmail);
+                                    databaseReference.child("Booking").child(UID).child(d).child("Lane").setValue(Lane);
+                                    databaseReference.child("Booking").child(UID).child(d).child("NumberPlayer").setValue(noPlayer);
+                                    databaseReference.child("Booking").child(UID).child(d).child("NumberGame").setValue(noGames);
+                                    databaseReference.child("Booking").child(UID).child(d).child("NumberShoes").setValue(pickShoes);
+                                    databaseReference.child("Booking").child(UID).child(d).child("TotalPrice").setValue(totalPrice);
+                                    databaseReference.child("Booking").child(UID).child(d).child("PaymentID").setValue(pp);
+
+                                    databaseReference.child("Payment").child(UID).child(d).child("Date").setValue(date);
+                                    databaseReference.child("Payment").child(UID).child(d).child("Time").setValue(time);
+                                    databaseReference.child("Payment").child(UID).child(d).child("PaymentID").setValue(pp);
+                                    databaseReference.child("Payment").child(UID).child(d).child("Email").setValue(dataEmail);
+                                    databaseReference.child("Payment").child(UID).child(d).child("NumberPlayer").setValue(noPlayer);
+                                    databaseReference.child("Payment").child(UID).child(d).child("NumberGame").setValue(noGames);
+                                    databaseReference.child("Payment").child(UID).child(d).child("NumberShoes").setValue(pickShoes);
+                                    databaseReference.child("Payment").child(UID).child(d).child("TotalPrice").setValue(totalPrice);
+                                    databaseReference.child("Payment").child(UID).child(d).child("PaymentMethod").setValue(payMethod);
                                 }
                                 else
                                 {
                                     databaseReference.child("CounterBook").child(UID).child(counter).child("k1").setValue("");
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("Date").setValue(date);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("Time").setValue(time);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("FullName").setValue(dataName);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("Email").setValue(dataEmail);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("Lane").setValue(Lane);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("NumberPlayer").setValue(noPlayer);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("NumberGame").setValue(noGames);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("NumberShoes").setValue(pickShoes);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("TotalPrice").setValue(totalPrice);
-                                    databaseReference.child("Bookingf").child(UID).child(counter).child("PaymentID").setValue(pp);
+
+                                    databaseReference.child("Booking").child(UID).child(counter).child("Date").setValue(date);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("Time").setValue(time);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("FullName").setValue(dataName);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("Email").setValue(dataEmail);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("Lane").setValue(Lane);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("NumberPlayer").setValue(noPlayer);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("NumberGame").setValue(noGames);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("NumberShoes").setValue(pickShoes);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("TotalPrice").setValue(totalPrice);
+                                    databaseReference.child("Booking").child(UID).child(counter).child("PaymentID").setValue(pp);
+
+                                    databaseReference.child("Payment").child(UID).child(counter).child("Date").setValue(date);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("Time").setValue(time);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("PaymentID").setValue(pp);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("Email").setValue(dataEmail);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("NumberPlayer").setValue(noPlayer);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("NumberGame").setValue(noGames);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("NumberShoes").setValue(pickShoes);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("TotalPrice").setValue(totalPrice);
+                                    databaseReference.child("Payment").child(UID).child(counter).child("PaymentMethod").setValue(payMethod);
                                 }
                             }
 
@@ -252,5 +230,11 @@ public class CheckOutBook extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(CheckOutBook.this, StartBook.class));
+        finish();
     }
 }

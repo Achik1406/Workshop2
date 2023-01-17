@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/E9FDF2"
+    android:background="@drawable/p03"
     tools:context=".Booking.Cancel">
 
     <Button
         android:id="@+id/yess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/S37"
+        android:backgroundTint="@color/B3EAFB"
+        android:textColor="@color/black"
         android:text="Yes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +25,8 @@
         android:id="@+id/nope"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/S37"
+        android:backgroundTint="@color/B3EAFB"
+        android:textColor="@color/black"
         android:text="No"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,28 +36,32 @@
         app:layout_constraintVertical_bias="0.088" />
 
     <LinearLayout
-        android:layout_width="414dp"
-        android:layout_height="434dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:background="#C98CE3"
+        android:gravity="center"
         android:orientation="vertical"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yess"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.152">
 
         <EditText
             android:id="@+id/cancelEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="19dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#F89964"
             android:ems="10"
-            android:textColorHint="@color/black"
             android:hint="Enter Email"
-            android:textColor="@color/black"
             android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="19dp"
             android:visibility="invisible" />
 
         <EditText
@@ -63,12 +69,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:backgroundTint="#F89964"
             android:ems="10"
             android:hint="Payment ID"
-            android:textSize="19dp"
+            android:inputType="textPersonName"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:inputType="textPersonName"
+            android:textSize="19dp"
             android:visibility="invisible" />
 
         <Button
@@ -77,9 +84,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:backgroundTint="@color/B3EAFB"
             android:text="Submit"
+            android:textColor="@color/black"
             android:visibility="invisible"
-            android:backgroundTint="@color/S37"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -91,20 +99,20 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textColor="@color/black"
         android:text="Are You Sure To Cancel ?"
+        android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.21" />
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="375dp"
-        android:layout_height="78dp"
+        android:layout_width="410dp"
+        android:layout_height="195dp"
         android:background="@drawable/cancelupdate"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
         app:layout_constraintEnd_toEndOf="parent"

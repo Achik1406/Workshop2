@@ -61,7 +61,7 @@ public class MugAdapter extends RecyclerView.Adapter<MugAdapter.MyViewHolder> {
         UID = ID.getCurrentUser().getUid();
 
         holder.productName.setText(name);
-        holder.productPrice.setText(price);
+        holder.productPrice.setText("RM "+price);
         try {
             Picasso.get().load(image).into(holder.imageView);
         }catch (Exception e){

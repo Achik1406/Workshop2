@@ -13,6 +13,10 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.goldendreamsbowling.AboutUsFragment;
+import com.example.goldendreamsbowling.HomePage;
+import com.example.goldendreamsbowling.LoggedInUser.BookingFragment;
 import com.example.goldendreamsbowling.R;
 import com.example.goldendreamsbowling.SubsMember;
 import com.example.goldendreamsbowling.databinding.ActivityStartBookBinding;
@@ -38,7 +42,7 @@ public class StartBook extends AppCompatActivity {
     int k,n,countL1;
     CheckBox c1;
     double TotalPrice,tax=0.08,discount;
-    Double PricePerGame = 9.90, PriceShoes,PriceRM;
+    Double PricePerGame = 5.50, PriceShoes,PriceRM;
     String Times,gk,Shoes,value;
     String lane;
     int countplayer=0,countgame=0,countshoes=0;
@@ -179,16 +183,19 @@ public class StartBook extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 price.setText("");
+                binding.linLane.setVisibility(View.GONE);
+                binding.linSelection.setVisibility(View.GONE);
                 binding.spnTime.setVisibility(View.INVISIBLE);
                 binding.spnTime2.setVisibility(View.INVISIBLE);
                 binding.spnTime3.setVisibility(View.INVISIBLE);
                 NumPerson = Integer.parseInt(binding.valueplayer.getText().toString());
                 Shoes = binding.valueShoes.getText().toString();
+                int s = Integer.parseInt(Shoes);
                 String date = binding.Date.getText().toString().trim();
 
                 if(Shoes != "0")
                 {
-                    PriceShoes = 1.10;
+                    PriceShoes = 1.20;
                 }
                 else
                 {
@@ -197,7 +204,7 @@ public class StartBook extends AppCompatActivity {
                 NumGame = Integer.parseInt(binding.valuegame.getText().toString());
                 double coupon = Double.valueOf(value);
 
-                PriceRM = (PricePerGame*countgame*countplayer)+PriceShoes-coupon;
+                PriceRM = (PricePerGame*countgame*countplayer)+(PriceShoes*s)-coupon;
                 gk= df.format(PriceRM);
                 price.setText(gk);
 
@@ -205,15 +212,15 @@ public class StartBook extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "Please Enter Valid Date", Toast.LENGTH_SHORT).show();
                 }
-                else if(countgame==1){
+                else if(countgame==1&&countplayer>0){
+                    binding.linSelection.setVisibility(View.VISIBLE);
                     binding.spnTime.setVisibility(View.VISIBLE);
                     binding.txtChange.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            binding.txtexpandless.setVisibility(View.VISIBLE);
-                            binding.txtexpandmore.setVisibility(View.GONE);
-                            Times = binding.spnTime.getSelectedItem().toString().trim();
 
+                            Times = binding.spnTime.getSelectedItem().toString().trim();
+                            binding.linLane.setVisibility(View.VISIBLE);
                             databaseReference.child("CheckLane").child(date).child(Times).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -247,6 +254,14 @@ public class StartBook extends AppCompatActivity {
 
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green1.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -283,6 +298,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green2.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green2.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green1.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -291,6 +314,8 @@ public class StartBook extends AppCompatActivity {
                                                     binding.green7.setChecked(false);
                                                     binding.green8.setChecked(false);
                                                     lane = "lane2";
+
+
                                                 }
                                             });
                                         }
@@ -317,6 +342,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green3.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green3.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green1.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -352,6 +385,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green4.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green3.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green1.setChecked(false);
@@ -387,6 +428,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green5.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green5.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -422,6 +471,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green6.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green6.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -457,6 +514,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green7.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green7.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -491,6 +556,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green8.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green8.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -510,6 +583,13 @@ public class StartBook extends AppCompatActivity {
 
                                 }
                             });
+                            binding.checkout.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Times = binding.spnTime.getSelectedItem().toString().trim();
+                                    check();
+                                }
+                            });
 
 
                         }
@@ -517,24 +597,19 @@ public class StartBook extends AppCompatActivity {
 
                     });
 
-                    binding.checkout.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Times = binding.spnTime.getSelectedItem().toString().trim();
-                            check();
-                        }
-                    });
 
 
                 }
-                else if(countgame==2)
+                else if(countgame==2&&countplayer>0)
                 {
+                    binding.linSelection.setVisibility(View.VISIBLE);
                     binding.spnTime2.setVisibility(View.VISIBLE);
                     binding.txtChange.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            binding.txtexpandless.setVisibility(View.VISIBLE);
-                            binding.txtexpandmore.setVisibility(View.GONE);
+                            //binding.txtexpandless.setVisibility(View.VISIBLE);
+                            //binding.txtexpandmore.setVisibility(View.GONE);
+                            binding.linLane.setVisibility(View.VISIBLE);
                             Times = binding.spnTime2.getSelectedItem().toString().trim();
                             databaseReference.child("CheckLane").child(date).child(Times).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
@@ -569,9 +644,21 @@ public class StartBook extends AppCompatActivity {
 
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green1.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane1";
                                                 }
                                             });
@@ -601,9 +688,21 @@ public class StartBook extends AppCompatActivity {
                                             binding.green2.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green2.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green1.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane2";
                                                 }
                                             });
@@ -631,9 +730,21 @@ public class StartBook extends AppCompatActivity {
                                             binding.green3.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green3.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green1.setChecked(false);
                                                     binding.green4.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane3";
                                                 }
                                             });
@@ -662,9 +773,21 @@ public class StartBook extends AppCompatActivity {
                                             binding.green4.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green3.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green1.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane4";
                                                 }
                                             });
@@ -693,6 +816,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green5.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green5.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -728,6 +859,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green6.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green6.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -763,6 +902,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green7.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green7.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -797,6 +944,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green8.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green8.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -833,14 +988,16 @@ public class StartBook extends AppCompatActivity {
 
 
                 }
-                else if(countgame==3)
+                else if(countgame==3&&countplayer>0)
                 {
+                    binding.linSelection.setVisibility(View.VISIBLE);
                     binding.spnTime3.setVisibility(View.VISIBLE);
                     binding.txtChange.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            binding.txtexpandless.setVisibility(View.VISIBLE);
-                            binding.txtexpandmore.setVisibility(View.GONE);
+                            //binding.txtexpandless.setVisibility(View.VISIBLE);
+                            //binding.txtexpandmore.setVisibility(View.GONE);
+                            binding.linLane.setVisibility(View.VISIBLE);
                             Times = binding.spnTime3.getSelectedItem().toString().trim();
                             databaseReference.child("CheckLane").child(date).child(Times).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
@@ -875,9 +1032,21 @@ public class StartBook extends AppCompatActivity {
 
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green1.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane1";
                                                 }
                                             });
@@ -907,9 +1076,21 @@ public class StartBook extends AppCompatActivity {
                                             binding.green2.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green2.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green1.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane2";
                                                 }
                                             });
@@ -937,9 +1118,21 @@ public class StartBook extends AppCompatActivity {
                                             binding.green3.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green3.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green1.setChecked(false);
                                                     binding.green4.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane3";
                                                 }
                                             });
@@ -968,9 +1161,21 @@ public class StartBook extends AppCompatActivity {
                                             binding.green4.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green3.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green1.setChecked(false);
+                                                    binding.green5.setChecked(false);
+                                                    binding.green6.setChecked(false);
+                                                    binding.green7.setChecked(false);
+                                                    binding.green8.setChecked(false);
                                                     lane = "lane4";
                                                 }
                                             });
@@ -998,6 +1203,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green5.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green5.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -1033,6 +1246,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green6.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green6.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -1068,6 +1289,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green7.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green7.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -1102,6 +1331,14 @@ public class StartBook extends AppCompatActivity {
                                             binding.green8.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View v) {
+                                                    if(binding.green8.isChecked())
+                                                    {
+                                                        binding.checkout.setVisibility(View.VISIBLE);
+                                                    }
+                                                    else
+                                                    {
+                                                        binding.checkout.setVisibility(View.GONE);
+                                                    }
                                                     binding.green2.setChecked(false);
                                                     binding.green3.setChecked(false);
                                                     binding.green4.setChecked(false);
@@ -1135,17 +1372,14 @@ public class StartBook extends AppCompatActivity {
                         }
                     });
 
-
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Please Enter Valid Game", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please Enter Valid Game or Player", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
-
-
 
     }
 
@@ -1208,5 +1442,11 @@ public class StartBook extends AppCompatActivity {
             }
         },year,month,day);
         datePicker.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(StartBook.this, BookingFragment.class));
+        finish();
     }
 }

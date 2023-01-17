@@ -50,7 +50,7 @@ public class CartAdapter extends FirebaseRecyclerAdapter<cartModel ,CartAdapter.
         ID = FirebaseAuth.getInstance();
         UID = ID.getCurrentUser().getUid();
         holder.productName.setText(model.getName());
-        holder.productPrice.setText(model.getPrice());
+        holder.productPrice.setText("RM "+model.getPrice());
         itemPrice = Double.parseDouble(model.getPrice());
         add add = new add();
         total += itemPrice;

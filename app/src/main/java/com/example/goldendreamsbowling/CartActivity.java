@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -31,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
 
     RecyclerView recyclerView;
     List<cartModel > cartModels;
@@ -40,6 +41,8 @@ public class CartActivity extends AppCompatActivity {
     FirebaseAuth ID;
     double a,b,total;
     String UID;
+    private SwipeRefreshLayout SwipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,8 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         cartModels = new ArrayList<>();
         getCartitem();
+        SwipeRefreshLayout=(SwipeRefreshLayout)findViewById(R.id.swip);
+        SwipeRefreshLayout.setOnRefreshListener(this);
         PlaceOrder = findViewById(R.id.placeOrder);
         PlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,5 +121,15 @@ public class CartActivity extends AppCompatActivity {
     public void onBackPressed() {
         startActivity(new Intent(CartActivity.this, merchFragment.class));
         finish();
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                SwipeRefreshLayout.setRefreshing(false);
+            }
+        }, 2000);
     }
 }

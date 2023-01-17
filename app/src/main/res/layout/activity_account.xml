@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/p01"
     tools:context=".LoggedInUser.Account">
 
     <ScrollView
@@ -43,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="#D9a1fc"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:layout_marginTop="40dp">
@@ -50,7 +52,8 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_username"/>
+                    android:background="@drawable/ic_username"
+                    android:backgroundTint="#6634e8"/>
 
                 <TextView
                     android:layout_width="120dp"
@@ -60,6 +63,14 @@
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:text=":" />
 
                 <TextView
                     android:id="@+id/fullName"
@@ -74,7 +85,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#340691"
+                android:background="#400068"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
@@ -84,13 +95,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="#D9a1fc"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/contact_phone"/>
+                    android:background="@drawable/contact_phone"
+                    android:backgroundTint="#6634e8"/>
 
                 <TextView
                     android:layout_width="120dp"
@@ -100,6 +113,12 @@
                     android:layout_marginLeft="5dp"
                     android:textColor="@color/black"
                     />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:text=":" />
 
                 <TextView
                     android:id="@+id/noPhone"
@@ -114,22 +133,25 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#340691"
+                android:background="#400068"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="#D9a1fc"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/contact_phone"/>
+                    android:background="@drawable/ic_baseline_email_24"
+                    android:backgroundTint="#6634e8"/>
 
                 <TextView
                     android:layout_width="120dp"
@@ -138,6 +160,12 @@
                     android:textSize="17sp"
                     android:layout_marginLeft="5dp"
                     android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:text=":" />
 
                 <TextView
                     android:id="@+id/Email"
@@ -153,24 +181,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="#340691" />
-
-
-
-
-
+                android:background="#400068" />
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:orientation="vertical"
                 android:id="@+id/linEdtName"
-                android:background="@color/E9FDF2"
+                android:background="#E1B6F1"
                 android:visibility="gone">
 
                 <TextView
@@ -178,6 +201,7 @@
                     android:layout_width="133dp"
                     android:layout_height="match_parent"
                     android:text="Enter Your name"
+                    android:textStyle="bold"
                     android:textColor="@color/black"/>
 
                 <EditText
@@ -207,6 +231,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="cancel"
+                        android:textStyle="bold"
                         android:textColor="@color/black"/>
 
                     <TextView
@@ -218,9 +243,11 @@
 
                     <TextView
                         android:id="@+id/txtSave"
+                        android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="save"
+                        android:layout_marginRight="10dp"
                         android:textColor="@color/black"/>
 
                 </RadioGroup>
@@ -229,15 +256,15 @@
                     android:id="@+id/textView14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="3dp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:orientation="vertical"
-                android:background="@color/E9FDF2"
+                android:background="#E1B6F1"
                 android:id="@+id/linEdtEmail"
                 android:visibility="gone">
 
@@ -246,6 +273,7 @@
                     android:layout_width="133dp"
                     android:layout_height="match_parent"
                     android:text="Enter Your email"
+                    android:textStyle="bold"
                     android:textColor="@color/black"/>
 
                 <EditText
@@ -275,6 +303,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="cancel"
+                        android:textStyle="bold"
                         android:textColor="@color/black"/>
 
                     <TextView
@@ -289,6 +318,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="save"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="bold"
                         android:textColor="@color/black"/>
 
                 </RadioGroup>
@@ -304,10 +335,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:orientation="vertical"
                 android:id="@+id/linEdtPhone"
-                android:background="@color/E9FDF2"
+                android:background="#E1B6F1"
                 android:visibility="gone">
 
                 <TextView
@@ -315,6 +346,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Enter Your Phone Number"
+                    android:textStyle="bold"
                     android:textColor="@color/black" />
 
                 <EditText
@@ -340,6 +372,7 @@
 
                     <TextView
                         android:id="@+id/txtCancel3"
+                        android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="cancel"
@@ -354,9 +387,11 @@
 
                     <TextView
                         android:id="@+id/txtSave3"
+                        android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="save"
+                        android:layout_marginRight="10dp"
                         android:textColor="@color/black"/>
 
                 </RadioGroup>

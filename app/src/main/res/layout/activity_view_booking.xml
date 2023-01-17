@@ -1,107 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/v8"
     tools:context=".Booking.ViewBooking"
-    android:orientation="vertical">
+    android:background="@drawable/p03">
 
     <TextView
-        android:id="@+id/textView25"
-        android:layout_width="351dp"
-        android:layout_height="75dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="200dp"
-        android:background="@drawable/viewbook" />
-
-    <LinearLayout
-        android:layout_width="366dp"
-        android:layout_height="256dp"
-        android:layout_gravity="center"
-        android:background="@color/E9FDF2"
-        android:orientation="vertical"
-        android:layout_marginBottom="50dp">
-
-        <TextView
-            android:id="@+id/Date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Date : "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/Time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Time : "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Name : "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email : "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/Game"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Number of Game : "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/Player"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Number of Player : "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/payID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Paymment ID : "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/Price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total Price : RM"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="155dp"
-        android:layout_height="131dp"
-        android:layout_gravity="end"
-        android:background="@drawable/logooosss"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/textHello"
+        android:layout_width="wrap_content"
+        android:layout_height="106dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/viewbook"
+        android:textColor="@color/neon_pink"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:id="@+id/swip"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cartRecView"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

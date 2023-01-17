@@ -3,6 +3,7 @@ package com.example.goldendreamsbowling.LoggedInUser;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -40,14 +41,27 @@ public class membersFragment extends Drawer_base {
         databaseReference.child("membership").child(UID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                final String txtEmail =snapshot.child("Email").getValue().toString();
-                final String txtName =snapshot.child("FullName").getValue().toString();
-                final String txtStatus =snapshot.child("Status").getValue().toString();
 
-                activityMembersFragmentBinding.welcomeText.setText("Welcome " + txtName + " !!");
-                activityMembersFragmentBinding.txtName.setText("Name : " + txtName);
-                activityMembersFragmentBinding.txtEmail.setText("Email : " + txtEmail);
-                activityMembersFragmentBinding.txtStatus.setText("Status : " + txtStatus);
+                if(snapshot.exists())
+                {
+                    activityMembersFragmentBinding.linmember.setVisibility(View.VISIBLE);
+                    final String txtEmail =snapshot.child("Email").getValue().toString();
+                    final String txtName =snapshot.child("FullName").getValue().toString();
+                    final String txtStatus =snapshot.child("Status").getValue().toString();
+
+                    activityMembersFragmentBinding.welcomeText.setText("Welcome " + txtName + " !!");
+                    activityMembersFragmentBinding.txtName.setText("Name : " + txtName);
+                    activityMembersFragmentBinding.txtEmail.setText("Email : " + txtEmail);
+                    activityMembersFragmentBinding.txtStatus.setText("Status : " + txtStatus);
+                }
+                else
+                {
+                    overridePendingTransition(0,0);
+                    startActivity(new Intent(membersFragment.this, SubsMember.class));
+                    overridePendingTransition(0,0);
+                    finish();
+                }
+
             }
 
             @Override
